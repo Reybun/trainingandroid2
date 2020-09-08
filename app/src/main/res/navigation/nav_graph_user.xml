@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_user"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.controle.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_userListDetailFragment"
+            app:destination="@id/userListDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userListAddFragment"
+            app:destination="@id/userListAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        tools:layout="@layout/fragment_user_detail"
+        android:name="com.example.controle.UserDetailFragment"
+        android:label="UserDetailFragment" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userListAddFragment"
+        tools:layout="@layout/fragment_userlist_add"
+        android:name="com.example.controle.UserListAddFragment"
+        android:label="UserListAddFragment" />
+    <fragment
+        android:id="@+id/userListDetailFragment"
+        tools:layout="@layout/fragment_userlist_detail"
+        android:name="com.example.controle.UserListDetailFragment"
+        android:label="UserListDetailFragment" >
+
+        <action
+            android:id="@+id/action_userListDetailFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+</navigation>
